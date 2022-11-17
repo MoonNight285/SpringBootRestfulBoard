@@ -33,7 +33,7 @@ import java.util.List;
 
 // GET : 해당 URI의 리소스를 조회
 // POST : 리소스를 생성
-// UPDATE : 해당 URI의 리소스를 수정
+// PUT : 해당 URI의 리소스를 수정
 // DELETE : 해당 URI의 리소스를 삭제
 
 @Controller
@@ -81,5 +81,17 @@ public class BoardController {
         mv.addObject("board", board);
         
         return mv;
+    }
+    
+    @RequestMapping(value = "/board/update/{idx}", method = RequestMethod.PUT)
+    public String updateBoard(BoardDto board) throws Exception {
+        boardService.updateBoard(board);
+        return "redirect:/board";
+    }
+    
+    @RequestMapping(value = "board/delete/{idx}", method = RequestMethod.DELETE)
+    public String deleteBoard(@PathVariable("idx") int idx) throws Exception {
+        boardService.deleteBoard(idx);
+        return "redirect:/board";
     }
 }

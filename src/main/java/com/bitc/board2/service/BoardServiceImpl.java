@@ -27,4 +27,14 @@ public class BoardServiceImpl implements BoardService {
         BoardDto board = boardMapper.selectBoardDetail(idx);
         return board;
     }
+    
+    @Override
+    public void updateBoard(BoardDto board) throws Exception {
+        boardMapper.updateBoard(board);
+    }
+    
+    @Override
+    public void deleteBoard(int idx) throws Exception {
+        boardMapper.deleteBoard(idx);
+    }
 }
