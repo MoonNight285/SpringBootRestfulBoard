@@ -1,0 +1,14 @@
+package com.bitc.board2.service;
+
+import com.bitc.board2.dto.BoardDto;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+public interface BoardService {
+    public List<BoardDto> selectBoardList() throws Exception;
+    
+    public void insertBoard(BoardDto board) throws Exception;
+    
+    public BoardDto selectBoardDetail(int idx) throws Exception;
+}
