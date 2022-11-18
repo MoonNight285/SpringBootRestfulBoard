@@ -30,6 +30,6 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         String imgPath = "file:///" + imagesLocation;
-        registry.addResourceHandler("/img/**").addResourceLocations(imgPath);
+        registry.addResourceHandler("/images/**").addResourceLocations(imgPath);
     }
 }
